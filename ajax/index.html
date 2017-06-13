@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Работа с ajax</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="main.js"></script>
+</head>
+<body>
+	<!--Задание 1 -->
+	<p><strong>Задание 1.</strong> Передайте на сервер два числа методом POST. Имена чисел – num1 и num2. Цель — файл a1.php. Если все выполнено верно, то будет возвращена строка с суммой чисел, если нет – ошибка. Способ передачи – AJAX.</p>
+	<p id="result"></p>
+	<!--//-->
+	<hr>
+	<!--Задание 2 -->
+	<p><strong>Задание 2.</strong> Передайте на сервер свой год рождения в формате XXXX. Передачу осуществляйте методом POST, имя переменной year, имя целевого файла – a2.php. Если все выполнено верно, то сервер вернет строку в которой будет количество прожитых лет, если нет – ошибку. Способ передачи – AJAX.</p>
+	<form id="formAge" >
+		Ведите год Вашего рождения: <input type="text" id="myYear"> <input type="submit" value="Посчитатть возраст">
+	</form>
+	<p id="myAge"></p>
+	<!--//-->
+	<hr>
+	<!--Задание 3 -->
+	<p><strong>Задание 3.</strong> Создайте форму с radiobutton для выбора пола (мужчина или женщина). Добавьте поле для ввода роста (в сантиметрах). По нажатию кнопки “Идеальный вес”, пошлите запрос на файл a3.php. На сервер передается параметр пол – имя параметра sex, значения man или woman и рост ( имя height). Передача осуществляется методом AJAX, с помощью POST. </p>
+
+	<form id="weight">
+		<p><strong>Ваш пол:</strong></p>
+		<input class=".sec" type="radio" name="sex1" value="man" id="man"> <label for="man">Мужчина</label><br>
+		<input class=".sec" type="radio" name="sex1" value="woman" id="woman"> <label for="woman">Женщина</label><br>
+		<label for="height1">Ваш рост (в см.):</label> <input type="text" id="height1"> <span id="myWeight"></span><br>
+		<input type="submit" value="Посчитатть идеалтный вес"> 
+	</form>
+	<!--//-->
+	<hr>
+
+	<!--Задание 4 -->
+	<p><strong>Задание 4.</strong> Измените предыдущее значение, чтобы рост задавался с помощью ползунка range. </p>
+	<form id="weightRange">
+		<p><strong>Ваш пол:</strong></p>
+		<input type="radio" name="sex2" value="man" id="man1"> <label for="man1">Мужчина</label><br>
+		<input type="radio" name="sex2" value="woman" id="woman1"> <label for="woman1">Женщина</label><br>
+		<label for="height">Ваш рост (в см.):</label> <input type="range" min="120" max="220" step="1" id="height2" name="polz"><output id="output" for="polz"></output> <br><br>
+		<span id="myWeightR"></span><br>
+		<input type="submit" value="Посчитать идеальный вес"> 
+	</form>
+	<!--//-->
+	<hr>
+	<!--Задание 5 -->
+	<p><strong>Задание 5.</strong> Измените предыдущее значение, чтобы рост задавался с помощью ползунка range. </p>
+	<form id="feedBack">
+		<p id="feedBackMes"></p>
+		<label for="fio">Ваше имя</label> <input type="text" id="fio" name="fio"><br><br>
+		<label for="email">Ваш e-mail</label> <input type="email" id="email" name="email"><br><br>
+		<label for="phone">Ваш телефон</label> <input type="tel" id="phone" name="phone"><br><br>
+		
+		<input type="submit" value="Отправить"> 
+	</form>
+	<!--//-->
+
+	<!--Задание 6 -->
+	<p><strong>Задание 6.</strong> Пошлите на сервер (goods.php) методом GET артикул товара (art). Сервер реагирует только на 2 артикула (1 или 2). Если все выполнено верно то сервер пришлет вам JSON строку с описанием товара. После раскодировки (JSON.parse) вы сможете вывести поля:
+		<ul>
+			<li>name – имя товара</li>
+			<li>weight – вес товара</li>
+			<li>cost – стоимость товара</li>
+			<li> img – ссылка на картинку.</li>
+		</ul>
+ 	</p>
+ 	<input type="radio" name="list" value="1" id="one"> <label for="one">Первый список</label><br>
+		<input type="radio" name="list" value="2" id="two"> <label for="two">Второй список</label><br>
+		<button id="showList">Показать список</button>
+
+	<ul id="jsonLine"></ul>
+	
+
+
+</body>
+</html>
